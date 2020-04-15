@@ -3,6 +3,7 @@ from . models import *
 # Register your models here.
 
 
-@admin.register(Desktop, Mobile, Laptop)
+@admin.register(Desktops, Mobiles, Laptops) 
 class ViewAdmin(admin.ModelAdmin):
     pass
+
