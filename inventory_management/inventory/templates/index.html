@@ -54,18 +54,17 @@
       <td>
         {{item.issues}}
       </td>
-      {% if header|lower =="laptops" %}
-      
+      {% if header|lower == "Laptops" %}
       <td class="btn btn-warning btn-sm" role="button">
-      <a href="{%url 'edit_laptop' item.pk%}">Edit</a>
+      <a href="{%url 'edit_laptop' item_pk%}">Edit</a>
       </td>
-      {% elif header|lower =="desktops" %}
+      {% elif header|lower == "Desktops" %}
       <td class="btn btn-warning btn-sm" role="button">
-      <a href="{%url 'edit_dekstop' item.pk%}">Edit</a>
+      <a href="{%url 'edit_dekstop' item_pk%}">Edit</a>
       </td>
       {% else %}
       <td class="btn btn-warning btn-sm" role="button">
-      <a href="{%url 'edit_mobile' item.pk%}">Edit</a>
+      <a href="{%url 'edit_mobile' item_pk%}">Edit</a>
       </td>
       {% endif %}
       </tr>

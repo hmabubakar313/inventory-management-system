@@ -21,7 +21,7 @@ def desktop(request):
     items = Desktops.objects.all()
     context = {
         'items': items,
-        'header': 'Desktop'
+        'header': 'Desktops'
     }
     return render(request, 'index.html', context)
 
@@ -61,7 +61,7 @@ def add_mobile(request):
 
 
 def edit_device(request, pk, model, cls):
-    item = get_object_or_404(Laptops, pk=pk)
+    item = get_object_or_404(model, pk=pk)
 
     if request.method == "POST":
         form = cls(request.POST, instance=item)
