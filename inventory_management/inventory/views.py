@@ -84,3 +84,43 @@ def edit_desktop(request, pk):
 
 def edit_mobile(request, pk):
     return edit_device(request, pk, Mobiles, MobileForm)
+
+
+# deleting items function
+def delete_laptop(request, pk):
+
+    Laptops.objects.filter(id=pk).delete()
+
+    items = Laptops.objects.all()
+
+    context = {
+        'items': items
+    }
+
+    return render(request, 'index.html', context)
+
+
+def delete_desktop(request, pk):
+
+    Desktops.objects.filter(id=pk).delete()
+
+    items = Desktops.objects.all()
+
+    context = {
+        'items': items
+    }
+
+    return render(request, 'index.html', context)
+
+
+def delete_mobile(request, pk):
+
+    Mobiles.objects.filter(id=pk).delete()
+
+    items = Mobiles.objects.all()
+
+    context = {
+        'items': items
+    }
+
+    return render(request, 'index.html', context)

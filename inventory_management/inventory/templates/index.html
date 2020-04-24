@@ -55,16 +55,19 @@
         {{item.issues}}
       </td>
       {% if header|lower == "Laptops" %}
-      <td class="btn btn-warning btn-sm" role="button">
-      <a href="{%url 'edit_laptop' item_pk%}">Edit</a>
+      <td>
+      <a  href="{%url 'edit_laptop' item.pk%}" class="btn btn-warning btn-sm" role="button">Edit</a>
+      <a href="{%url 'delete_laptop' item.pk%}" class="btn btn-danger btn-sm" role="button"> Delete</a>
       </td>
       {% elif header|lower == "Desktops" %}
-      <td class="btn btn-warning btn-sm" role="button">
-      <a href="{%url 'edit_dekstop' item_pk%}">Edit</a>
-      </td>
+      <td>
+      <a href="{%url 'edit_dekstop' item.pk%}" class="btn btn-warning btn-sm" role="button">Edit</a>
+      <a href="{%url 'delete_desktop' item.pk%}" class="btn btn-danger btn-sm" role="button"> Delete</a>
+    </td>
       {% else %}
-      <td class="btn btn-warning btn-sm" role="button">
-      <a href="{%url 'edit_mobile' item_pk%}">Edit</a>
+      <td >
+      <a href="{%url 'edit_mobile' item.pk%}" class="btn btn-warning btn-sm" role="button">Edit</a>
+      <a href="{%url 'delete_mobile' item.pk%}" class="btn btn-danger btn-sm" role="button"> Delete</a>
       </td>
       {% endif %}
       </tr>
